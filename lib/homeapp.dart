@@ -90,6 +90,8 @@ class _MyHomeAppState extends State<MyHomeApp> {
       ),
       body: wetherMap != null
           ? Container(
+              decoration: BoxDecoration(
+                  image: DecorationImage(image: NetworkImage("images/ab.jpg"))),
               height: double.infinity,
               width: double.infinity,
               padding: EdgeInsets.all(4),
@@ -119,45 +121,48 @@ class _MyHomeAppState extends State<MyHomeApp> {
                       ),
                     ),
                     Card(
-                      elevation: 4,
+                      elevation: 5,
                       child: Container(
-                        width: double.infinity,
-                        padding: EdgeInsets.all(18.0),
-                        margin:
-                            EdgeInsets.symmetric(vertical: 15, horizontal: 30),
+                        decoration: BoxDecoration(
+                          color: Colors.lightGreenAccent,
+                          image: DecorationImage(image: AssetImage("images/a.jpg"))
+                        ),
+                        padding: EdgeInsets.all(10.0),
+                        // margin:
+                        //     EdgeInsets.symmetric(vertical: 7, horizontal: 10),
                         child: Column(
                           children: [
-                            SizedBox(
-                                height:
-                                    MediaQuery.of(context).size.height * 0.01),
+                            // SizedBox(
+                            //     height:
+                            //         MediaQuery.of(context).size.height * 0.01),
                             CircleAvatar(
                               maxRadius: 40,
                               backgroundImage: NetworkImage(
                                   "http://openweathermap.org/img/wn/10d@2x.png"),
                             ),
                             Text(
-                              "${wetherMap!["main"]["temp"]}",
-                              style: TextStyle(fontSize: 22),
+                              "${wetherMap!["main"]["temp"]},",
+                              style: TextStyle(fontSize: 22,color: Colors.white),
                             ),
-                            SizedBox(
-                                height:
-                                    MediaQuery.of(context).size.height * 0.01),
+                            // SizedBox(
+                            //     height:
+                            //         MediaQuery.of(context).size.height * 0.01),
                             Column(
                               children: [
                                 Text(
                                   "Feels like ${wetherMap!["main"]["feels_like"]}",
-                                  style: TextStyle(fontSize: 20),
+                                  style: TextStyle(fontSize: 20,color: Colors.white),
                                 ),
                                 SizedBox(
                                     height: MediaQuery.of(context).size.height *
                                         0.01),
                                 Text(
                                   " ${wetherMap!["weather"][0]["description"]}",
-                                  style: TextStyle(fontSize: 20),
+                                  style: TextStyle(fontSize: 20,color: Colors.white),
                                 ),
-                                SizedBox(
-                                    height: MediaQuery.of(context).size.height *
-                                        0.01),
+                                // SizedBox(
+                                //     height: MediaQuery.of(context).size.height *
+                                //         0.01),
                               ],
                             ),
                             Column(
@@ -165,33 +170,36 @@ class _MyHomeAppState extends State<MyHomeApp> {
                               children: [
                                 Text(
                                   "Humidity ${wetherMap!["main"]["humidity"]},Pressure ${wetherMap!["main"]["pressure"]}",
-                                  style: TextStyle(fontSize: 20),
+                                  style: TextStyle(fontSize: 20,color: Colors.white),
                                 ),
                                 SizedBox(
                                     height: MediaQuery.of(context).size.height *
-                                        0.01),
+                                        0.02),
                                 Text(
                                   "Sunrise ${Jiffy(DateTime.fromMillisecondsSinceEpoch(wetherMap!["sys"]["sunrise"] * 1000)).format("h:mm:a")}, Sunset ${Jiffy(DateTime.fromMillisecondsSinceEpoch(wetherMap!["sys"]["sunset"] * 1000)).format("h:mm:a")}",
-                                  style: TextStyle(fontSize: 20),
+                                  style: TextStyle(fontSize: 16,color: Colors.black),
                                 ),
-                                SizedBox(
-                                    height: MediaQuery.of(context).size.height *
-                                        0.01),
+                                // SizedBox(
+                                //     height: MediaQuery.of(context).size.height *
+                                //         0.01),
                               ],
                             )
                           ],
                         ),
                       ),
                     ),
+                SizedBox(
+                       height: MediaQuery.of(context).size.height *
+                           0.02),
                     SizedBox(
-                      height: 250,
+                      height: 230,
                       child: ListView.builder(
                           scrollDirection: Axis.horizontal,
                           itemCount: forecastMap?.length,
                           shrinkWrap: true,
                           itemBuilder: (context, index) => Container(
                                 decoration: BoxDecoration(
-                                    color: Colors.amber,
+                                    color: Colors.lightGreen,
                                     borderRadius: BorderRadius.circular(8)),
                                 padding: EdgeInsets.all(14),
                                 margin: EdgeInsets.all(5),
