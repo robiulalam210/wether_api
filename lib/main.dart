@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wether_api/homeapp.dart';
+import 'package:wether_api/splah.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyHomeApp(),
+      home: SplahScrren(),
     );
   }
 }
