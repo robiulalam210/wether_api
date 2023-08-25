@@ -77,6 +77,7 @@ class _MyHomeAppState extends State<MyHomeApp> {
 
       wetherMap = Map<String, dynamic>.from(jsonDecode(recponce_wether.body));
       print("ppppppppppppppppp ${latitude}, lonnnnn$longatute");
+      print("ppppppppppppppppp ${latitude}, lonnnnn$longatute");
     });
   }
 
